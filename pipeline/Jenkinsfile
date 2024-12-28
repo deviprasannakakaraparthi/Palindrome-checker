@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+    stages {
+        stage('Clone Repository') {
+            steps {
+                git 'https://github.com/your-repo/palindrome-checker.git'
+            }
+        }
+        stage('Run Palindrome Checker') {
+            steps {
+                echo 'Running the Palindrome Checker script...'
+                sh 'python3 palindrome_checker.py'
+            }
+        }
+        stage('Archive Results') {
+            steps {
+                echo 'Archiving results...'
+                archiveArtifacts artifacts: 'results.txt'
+            }
+        }
+    }
+}
+
