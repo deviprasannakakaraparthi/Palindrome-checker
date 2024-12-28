@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/your-repo/palindrome-checker.git'
+                git 'https://github.com/deviprasannakakaraparthi/palindrome-checker.git'
             }
         }
         stage('Run Palindrome Checker') {
